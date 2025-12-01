@@ -4,8 +4,8 @@
   box-sizing: border-box;
   justify-content: space-between;
   padding-inline: $header-padding;
-  font-weight: 500;
-  font-size: 12px;
+  font-weight: $font-w-header;
+  font-size: $font-s-header;
 }
 
 .logo__image {
@@ -41,7 +41,7 @@
     line-height: $link-height;
     padding: 0;
     text-align: center;
-    transition: color 0.3s;
+    transition: color $effect-time;
     white-space: nowrap;
 
     &:hover {
@@ -68,8 +68,4 @@
   &:hover {
     color: $header-active-color;
   }
-}
-
-[data-qa='nav-hover']:hover {
-  color: $header-active-color;
 }
