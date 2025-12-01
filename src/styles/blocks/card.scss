@@ -4,21 +4,21 @@
   gap: $catalog-gap-row $catalog-gap-column;
   justify-content: center;
 
-  @media (min-width: 488px) {
+  @media (min-width: $screen-sm) {
     & {
-      grid-template-columns: repeat(2, 200px);
+      grid-template-columns: repeat(2, $card-width);
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: $screen-md) {
     & {
-      grid-template-columns: repeat(3, 200px);
+      grid-template-columns: repeat(3, $card-width);
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: $screen-bg) {
     & {
-      grid-template-columns: repeat(4, 200px);
+      grid-template-columns: repeat(4, $card-width);
     }
   }
 }
@@ -39,7 +39,7 @@
 
   &:hover {
     transform: $card-transform;
-    z-index: 10;
+    z-index: $index-global;
   }
 
   &__image {
@@ -55,7 +55,7 @@
     color: $text-main-color;
     font-weight: $font-w-title;
     font-size: $font-s-title-label;
-    line-height: 18px;
+    line-height: $font-lh-bg;
     margin-bottom: $title-margin-bottom;
   }
 
@@ -69,7 +69,7 @@
     color: $text-less-color;
     font-size: $font-s-code-reviews;
     margin-bottom: $space-middle;
-    line-height: 14px;
+    line-height: $font-lh-sm;
   }
 
   &__rating-row {
@@ -85,7 +85,7 @@
     padding-right: $reviews-padding-right;
     color: $text-main-color;
     font-size: $font-s-code-reviews;
-    line-height: 14px;
+    line-height: $font-lh-sm;
     align-self: flex-end;
   }
 
@@ -101,7 +101,7 @@
   &__label {
     color: $text-less-color;
     font-size: $font-s-title-label;
-    line-height: 18px;
+    line-height: $font-lh-bg;
   }
 
   &__value {
@@ -109,7 +109,7 @@
     color: $text-main-color;
     font-weight: $font-w-bold;
     font-size: $font-s-price;
-    line-height: 18px;
+    line-height: $font-lh-bg;
   }
 
   &__button {
@@ -124,15 +124,16 @@
     text-decoration: none;
     font-weight: $font-w-bold;
     font-size: $font-s-button;
-    line-height: 16px;
+    line-height: $font-lh-md;
 
+    border: $button-border solid transparent;
     transition: $effect-time ease;
 
     &:hover {
       box-sizing: border-box;
       background-color: $button-hover-color;
       color: $text-button-hover-color;
-      border: 1px solid $button-main-color;
+      border: $button-border solid $button-main-color;
     }
   }
 }
